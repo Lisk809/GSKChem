@@ -16,13 +16,7 @@
 
       <!-- PDF 嵌入显示 -->
       <div class="pdf-wrapper">
-        <embed
-          :src="pdfUrl"
-          type="application/pdf"
-          width="100%"
-          height="800"
-          class="pdf-embed"
-        />
+        <embed :src="pdfUrl" type="application/pdf" width="100%" height="800" class="pdf-embed" />
         <div class="fallback-message">
           <i class="fas fa-exclamation-triangle"></i> 您的浏览器无法直接预览 PDF，请
           <a :href="pdfUrl" download>点击下载</a> 后查看。
@@ -46,7 +40,7 @@
 
 <script setup lang="ts">
 // 请将实际的 PDF 文件放在 public 目录下，例如 public/shiyan_bowenlu_vol1.pdf
-const pdfUrl = '/shiyan_bowenlu_vol1.pdf'
+const pdfUrl = "/shiyan_bowenlu_vol1.pdf";
 </script>
 
 <style scoped>
@@ -60,7 +54,7 @@ const pdfUrl = '/shiyan_bowenlu_vol1.pdf'
 .journal-header {
   text-align: center;
   margin-bottom: 2rem;
-  font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+  font-family: "Georgia", "Times New Roman", "宋体", serif;
 }
 
 .journal-header h1 {
@@ -102,7 +96,9 @@ const pdfUrl = '/shiyan_bowenlu_vol1.pdf'
 .pdf-card {
   background: #fefcf5;
   border-radius: 24px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.02);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
   overflow: hidden;
   transition: box-shadow 0.2s ease;
 }
@@ -130,7 +126,7 @@ const pdfUrl = '/shiyan_bowenlu_vol1.pdf'
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .btn-download:hover {
@@ -141,7 +137,7 @@ const pdfUrl = '/shiyan_bowenlu_vol1.pdf'
 .page-hint {
   font-size: 0.85rem;
   color: #8b7a6b;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .pdf-wrapper {
@@ -168,7 +164,7 @@ const pdfUrl = '/shiyan_bowenlu_vol1.pdf'
   padding: 1.2rem 2rem;
   border-radius: 32px;
   text-align: center;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: #8a6e4b;
   white-space: nowrap;
 }
@@ -199,7 +195,7 @@ const pdfUrl = '/shiyan_bowenlu_vol1.pdf'
   padding: 0.6rem 1.2rem;
   border-radius: 48px;
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .fallback-message a {
@@ -217,7 +213,7 @@ const pdfUrl = '/shiyan_bowenlu_vol1.pdf'
   padding: 1.5rem 1.8rem;
   background: #ffffffd9;
   border-top: 1px solid #f0ebdf;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   color: #5c6e53;
   display: flex;
   flex-wrap: wrap;
@@ -253,7 +249,7 @@ const pdfUrl = '/shiyan_bowenlu_vol1.pdf'
   padding: 0.6rem 1.6rem;
   border-radius: 40px;
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   transition: 0.2s;
 }
 

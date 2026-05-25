@@ -23,7 +23,7 @@
 
 > “冀以尘雾之微，补益山海；萤烛末光，增辉日月。” —— 铃奈庵命题组
 
-![项目预览](https://socialify.git.ci/lisk809/GSKChem/image?language=1&owner=1&name=1&stargazers=1&theme=Light)  
+![项目预览](https://socialify.git.ci/lisk809/GSKChem/image?language=1&owner=1&name=1&stargazers=1&theme=Light)
 
 ---
 
@@ -40,16 +40,16 @@
 
 ## 🛠️ 技术栈
 
-| 类别               | 技术                                                         |
-| ------------------ | ------------------------------------------------------------ |
-| **前端框架**       | Vue 3 (Composition API + `<script setup>`)                   |
-| **语言**           | TypeScript                                                   |
-| **构建工具**       | Vite                                                         |
-| **路由**           | Vue Router 4                                                 |
-| **样式**           | CSS 变量 + 拟态设计 + CSS Grid / Flexbox                     |
-| **图标**           | Font Awesome 6                                               |
-| **字体**           | Inter (无衬线) + Georgia (衬线标题)                          |
-| **代码规范**       | ESLint + Prettier (推荐)                                     |
+| 类别         | 技术                                       |
+| ------------ | ------------------------------------------ |
+| **前端框架** | Vue 3 (Composition API + `<script setup>`) |
+| **语言**     | TypeScript                                 |
+| **构建工具** | Vite                                       |
+| **路由**     | Vue Router 4                               |
+| **样式**     | CSS 变量 + 拟态设计 + CSS Grid / Flexbox   |
+| **图标**     | Font Awesome 6                             |
+| **字体**     | Inter (无衬线) + Georgia (衬线标题)        |
+| **代码规范** | ESLint + Prettier (推荐)                   |
 
 ---
 

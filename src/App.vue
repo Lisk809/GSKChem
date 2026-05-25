@@ -11,12 +11,11 @@
 
       <!-- 中间：Logo（可选，可替换为文字或图标） -->
       <div class="logo-area" @click="goHome">
-      <span class="logo-text">GSKChem</span>
-        <img class="logo-icon" src="/logo.jpg"></img>
+        <span class="logo-text">GSKChem</span>
+        <img class="logo-icon" src="/logo.jpg" />
       </div>
 
       <!-- 右侧：一组图标按钮-->
-
     </div>
 
     <!-- 菜单面板（点击菜单按钮时展开） -->
@@ -29,9 +28,7 @@
           <span class="menu-title">导航</span>
         </div>
         <div class="menu-links">
-          <router-link to="/" @click="closeMenu">
-            <i class="fas fa-home"></i> 主页
-          </router-link>
+          <router-link to="/" @click="closeMenu"> <i class="fas fa-home"></i> 主页 </router-link>
           <router-link to="/exam" @click="closeMenu">
             <i class="fas fa-chalkboard"></i> GSKChem联考
           </router-link>
@@ -41,9 +38,9 @@
         </div>
         <div class="menu-divider"></div>
         <div class="menu-actions">
-        <button class="menu-action-btn" @click="toggleThemeAndClose">
+          <button class="menu-action-btn" @click="toggleThemeAndClose">
             <i :class="isDark ? 'fas fa-sun' : 'fas fa-moon'"></i>
-            {{ isDark ? '浅色模式' : '深色模式' }}
+            {{ isDark ? "浅色模式" : "深色模式" }}
           </button>
           <button class="menu-action-btn" @click="goToLoginAndClose">
             <i class="fas fa-user-astronaut"></i>
@@ -59,83 +56,81 @@
     <router-view />
   </main>
 
-  <footer>
-    <i class="far fa-copyright"></i> GSKChem
-  </footer>
+  <footer><i class="far fa-copyright"></i> GSKChem</footer>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-import SocialFooter from './components/SocialFooter.vue'
+import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
+import SocialFooter from "./components/SocialFooter.vue";
 
-const router = useRouter()
-const isMenuOpen = ref(false)
-const isDark = ref(false)
+const router = useRouter();
+const isMenuOpen = ref(false);
+const isDark = ref(false);
 
 const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
-}
+  isMenuOpen.value = !isMenuOpen.value;
+};
 
 const closeMenu = () => {
-  isMenuOpen.value = false
-}
+  isMenuOpen.value = false;
+};
 
 const goHome = () => {
-  router.push('/')
-  closeMenu()
-}
+  router.push("/");
+  closeMenu();
+};
 
 const toggleTheme = () => {
-  isDark.value = !isDark.value
-  updateTheme()
-}
+  isDark.value = !isDark.value;
+  updateTheme();
+};
 
 const toggleThemeAndClose = () => {
-  toggleTheme()
-  closeMenu()
-}
+  toggleTheme();
+  closeMenu();
+};
 
 const goToLogin = () => {
-  router.push('/login')
-}
+  router.push("/login");
+};
 
 const goToLoginAndClose = () => {
-  goToLogin()
-  closeMenu()
-}
+  goToLogin();
+  closeMenu();
+};
 
 const updateTheme = () => {
   if (isDark.value) {
-    document.documentElement.setAttribute('data-theme', 'dark')
-    localStorage.setItem('theme', 'dark')
+    document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
     // 修改 theme-color
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#1a2418')
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#1a2418");
   } else {
-    document.documentElement.setAttribute('data-theme', 'light')
-    localStorage.setItem('theme', 'light')
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#eef2f0')
+    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#eef2f0");
   }
-}
+};
 
 const initTheme = () => {
-  const savedTheme = localStorage.getItem('theme')
-  if (savedTheme === 'dark') {
-    isDark.value = true
-    document.documentElement.setAttribute('data-theme', 'dark')
-  } else if (savedTheme === 'light') {
-    isDark.value = false
-    document.documentElement.setAttribute('data-theme', 'light')
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    isDark.value = true;
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else if (savedTheme === "light") {
+    isDark.value = false;
+    document.documentElement.setAttribute("data-theme", "light");
   } else {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    isDark.value = prefersDark
-    document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light')
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    isDark.value = prefersDark;
+    document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
   }
-}
+};
 
 onMounted(() => {
-  initTheme()
-})
+  initTheme();
+});
 </script>
 
 <style scoped>
@@ -170,7 +165,7 @@ onMounted(() => {
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   color: var(--btn-color);
   font-size: 1.3rem;
 }
@@ -202,7 +197,7 @@ onMounted(() => {
   padding: 0.2rem 0.8rem;
   border-radius: 40px;
   transition: background 0.2s;
-  width:fit-content;
+  width: fit-content;
 }
 
 .logo-area:hover {

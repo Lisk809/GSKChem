@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import { Icon } from '@iconify/vue';
+import { Icon } from "@iconify/vue";
 // 如果需要动态设置链接，可以使用 props，这里为简单示例直接写占位符
 // 用户可根据实际情况修改 href 中的地址
 </script>
@@ -42,7 +42,9 @@ import { Icon } from '@iconify/vue';
   border-top: 1px solid var(--footer-border, rgba(0, 0, 0, 0.05));
   padding: 12px 24px;
   z-index: 100;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
 /* 支持暗色主题（通过 data-theme 或父级 class） */

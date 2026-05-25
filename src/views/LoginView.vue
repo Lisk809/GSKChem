@@ -1,7 +1,7 @@
 <template>
   <div class="card-panel login-container">
     <div class="login-header">
-      <div class="logo-icon login-logo"><img class="logo-icon" src="/logo.jpg"></img></div>
+      <div class="logo-icon login-logo"><img class="logo-icon" src="/logo.jpg" /></div>
       <h2>欢迎回到 GSKChem</h2>
       <p>使用邮箱或QQ账号登录幻想乡</p>
     </div>
@@ -9,9 +9,9 @@
     <form @submit.prevent="handleLogin">
       <div class="input-group">
         <i class="fas fa-envelope"></i>
-        <input 
-          type="text" 
-          v-model="form.username" 
+        <input
+          type="text"
+          v-model="form.username"
           placeholder="邮箱 / QQ号"
           autocomplete="username"
         />
@@ -19,23 +19,21 @@
 
       <div class="input-group">
         <i class="fas fa-lock"></i>
-        <input 
-          :type="showPassword ? 'text' : 'password'" 
-          v-model="form.password" 
+        <input
+          :type="showPassword ? 'text' : 'password'"
+          v-model="form.password"
           placeholder="密码"
           autocomplete="current-password"
         />
-        <i 
-          :class="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'" 
+        <i
+          :class="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"
           class="toggle-pwd"
           @click="showPassword = !showPassword"
         ></i>
       </div>
 
       <div class="options">
-        <label class="checkbox">
-          <input type="checkbox" v-model="rememberMe"> 记住我
-        </label>
+        <label class="checkbox"> <input type="checkbox" v-model="rememberMe" /> 记住我 </label>
         <a href="#" class="forgot-link">忘记密码？</a>
       </div>
 
@@ -55,25 +53,25 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { reactive, ref } from "vue";
+import { useRouter } from "vue-router";
 
-const router = useRouter()
-const form = reactive({ username: '', password: '' })
-const rememberMe = ref(false)
-const showPassword = ref(false)
+const router = useRouter();
+const form = reactive({ username: "", password: "" });
+const rememberMe = ref(false);
+const showPassword = ref(false);
 
 const handleLogin = () => {
   // 仅做前端简单非空验证，不请求后端
   if (!form.username.trim() || !form.password.trim()) {
-    alert('请填写邮箱/QQ号和密码')
-    return
+    alert("请填写邮箱/QQ号和密码");
+    return;
   }
   // 模拟登录成功（后端暂未接入）
-  alert(`演示登录成功！\n欢迎回来，${form.username}`)
+  alert(`演示登录成功！\n欢迎回来，${form.username}`);
   // 登录成功后跳转到主页（可自定义）
-  router.push('/')
-}
+  router.push("/");
+};
 </script>
 
 <style scoped>
@@ -112,7 +110,7 @@ const handleLogin = () => {
 }
 .input-group:focus-within {
   border-color: #2b6e3c;
-  box-shadow: 0 0 0 3px rgba(43,110,60,0.2);
+  box-shadow: 0 0 0 3px rgba(43, 110, 60, 0.2);
 }
 .input-group i:first-child {
   color: #7a9f6e;
@@ -124,7 +122,7 @@ const handleLogin = () => {
   border: none;
   outline: none;
   font-size: 1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background: transparent;
 }
 .toggle-pwd {
@@ -174,7 +172,7 @@ const handleLogin = () => {
   margin-top: 2rem;
   text-align: center;
   font-size: 0.8rem;
-  background:var(--bg-body);
+  background: var(--bg-body);
   padding: 0.7rem;
   border-radius: 2rem;
   color: #4a6e4d;
