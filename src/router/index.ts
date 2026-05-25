@@ -17,7 +17,7 @@ const router = createRouter({
   ]
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
   if (to.fullPath.includes('?page=gsk')) {
     next('/exam')
   } else {
