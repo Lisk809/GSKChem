@@ -109,9 +109,12 @@ const updateTheme = () => {
   if (isDark.value) {
     document.documentElement.setAttribute('data-theme', 'dark')
     localStorage.setItem('theme', 'dark')
+    // 修改 theme-color
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#1a2418')
   } else {
     document.documentElement.setAttribute('data-theme', 'light')
     localStorage.setItem('theme', 'light')
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#eef2f0')
   }
 }
 

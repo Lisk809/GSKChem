@@ -1,46 +1,89 @@
 /* ========== 主题变量 ========== */
 :root {
-  --bg-body: #eef2f0;
-  --bg-nav: rgba(248, 250, 245, 0.85);
-  --bg-card: rgba(255, 255, 245, 0.92);
-  --bg-card-solid: #fffffa;
-  --bg-code: #edf4e6;
-  --text-primary: #1e2a1e;
-  --text-secondary: #3a5c3a;
-  --text-muted: #6c8e68;
-  --border-light: rgba(100, 120, 90, 0.2);
-  --border-card: rgba(140, 160, 120, 0.2);
-  --shadow-sm: 0 8px 20px -8px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 12px 28px -12px rgba(0, 0, 0, 0.12);
-  --btn-bg: #eef3ea;
-  --btn-color: #2d5a2a;
-  --accent-green: #5b8c50;
-  --accent-light: #9bc48f;
-  --divider: #cbdcc2;
-  --hero-bg: #eef0e7;
+  /* 浅色主题 */
+  --bg-body: #f4f7f2;
+  --bg-nav: rgba(248, 250, 245, 0.92);
+  --bg-card: rgba(255, 255, 248, 0.94);
+  --bg-card-solid: #ffffff;
+  --bg-code: #edf3e8;
+  
+  --text-primary: #1a2e1a;
+  --text-secondary: #2f4d2f;
+  --text-muted: #5a7a52;
+  
+  --border-light: rgba(90, 110, 80, 0.15);
+  --border-card: rgba(120, 140, 100, 0.2);
+  
+  --shadow-sm: 0 6px 14px -6px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 12px 24px -10px rgba(0, 0, 0, 0.1);
+  
+  --btn-bg: #eaf1e5;
+  --btn-color: #2b5530;
+  
+  --accent-green: #3c7840;
+  --accent-light: #8bc34a;
+  --accent-dark: #2a5c2e;
+  
+  --divider: #d4e2ca;
+  --hero-bg: #eaf0e4;
 }
 
 [data-theme="dark"] {
-  --bg-body: #1a2418;
-  --bg-nav: rgba(30, 40, 28, 0.88);
-  --bg-card: rgba(35, 45, 32, 0.92);
-  --bg-card-solid: #2a3627;
-  --bg-code: #2a3627;
-  --text-primary: #e2e8df;
-  --text-secondary: #bdd0ae;
-  --text-muted: #9ab08b;
-  --border-light: rgba(80, 100, 70, 0.4);
-  --border-card: rgba(100, 120, 80, 0.3);
-  --shadow-sm: 0 8px 20px -8px rgba(0, 0, 0, 0.3);
-  --shadow-hover: 0 12px 28px -12px rgba(0, 0, 0, 0.4);
+  --bg-body: #121a10;
+  --bg-nav: rgba(25, 35, 22, 0.9);
+  --bg-card: rgba(30, 42, 27, 0.92);
+  --bg-card-solid: #1f2a1c;
+  --bg-code: #253022;
+  
+  --text-primary: #ebf0e7;
+  --text-secondary: #cfe2c4;
+  --text-muted: #9bb88e;
+  
+  --border-light: rgba(80, 100, 70, 0.35);
+  --border-card: rgba(100, 125, 85, 0.3);
+  
+  --shadow-sm: 0 6px 14px -6px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 12px 24px -10px rgba(0, 0, 0, 0.6);
+  
   --btn-bg: #2f3e2b;
-  --btn-color: #d4e0ca;
-  --accent-green: #8ab87a;
-  --accent-light: #5b8c50;
+  --btn-color: #d4e3ca;
+  
+  --accent-green: #8bc34a;
+  --accent-light: #6fbf4c;
+  --accent-dark: #5a9e3a;
+  
   --divider: #4a6042;
-  --hero-bg: #2a3627;
+  --hero-bg: #253022;
 }
 
+/* 其余已有样式保持不变，仅微调部分细节 */
+.card-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+}
+
+.announce-banner {
+  background: var(--bg-code);
+  border-left-color: var(--accent-green);
+  color: var(--text-secondary);
+}
+
+.recruit-card {
+  background: var(--bg-card-solid);
+}
+
+/* 确保所有链接文字对比度 */
+a, .menu-links a, .menu-action-btn {
+  color: var(--text-secondary);
+}
+a:hover, .menu-links a:hover {
+  color: var(--accent-green);
+}
+
+/* 按钮增强 */
+.auth-nav-btn, .icon-btn {
+  color: var(--btn-color);
+}
 * {
   margin: 0;
   padding: 0;
