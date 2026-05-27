@@ -34,55 +34,55 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from "vue";
 
 interface Slide {
-  image: string
-  title: string
-  description: string
+  image: string;
+  title: string;
+  description: string;
 }
 
 const props = defineProps<{
-  slides: Slide[]
-  autoPlayInterval?: number
-}>()
+  slides: Slide[];
+  autoPlayInterval?: number;
+}>();
 
-const currentIndex = ref(0)
-let autoPlayTimer: number | null = null
+const currentIndex = ref(0);
+let autoPlayTimer: number | null = null;
 
 const nextSlide = () => {
-  currentIndex.value = (currentIndex.value + 1) % props.slides.length
-}
+  currentIndex.value = (currentIndex.value + 1) % props.slides.length;
+};
 
 const prevSlide = () => {
-  currentIndex.value = (currentIndex.value - 1 + props.slides.length) % props.slides.length
-}
+  currentIndex.value = (currentIndex.value - 1 + props.slides.length) % props.slides.length;
+};
 
 const goToSlide = (index: number) => {
-  currentIndex.value = index
-}
+  currentIndex.value = index;
+};
 
 const startAutoPlay = () => {
-  if (autoPlayTimer) clearInterval(autoPlayTimer)
+  if (autoPlayTimer) clearInterval(autoPlayTimer);
   autoPlayTimer = window.setInterval(() => {
-    nextSlide()
-  }, props.autoPlayInterval || 5000)
-}
+    nextSlide();
+  }, props.autoPlayInterval || 5000);
+};
 
 const pauseAutoPlay = () => {
   if (autoPlayTimer) {
-    clearInterval(autoPlayTimer)
-    autoPlayTimer = null
+    clearInterval(autoPlayTimer);
+    autoPlayTimer = null;
   }
-}
+};
 
 onMounted(() => {
-  startAutoPlay()
-})
+  startAutoPlay();
+});
 
 onUnmounted(() => {
-  pauseAutoPlay()
-})
+  pauseAutoPlay();
+});
 </script>
 
 <style scoped>

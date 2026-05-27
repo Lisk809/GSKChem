@@ -1,7 +1,6 @@
 <template>
   <!-- 主入口，背景暗色系，几何portal氛围，懒滚动高性能 -->
   <div class="home-portal" ref="portalRef">
-
     <!-- HERO 区域：科技门户入口，动态光标+扫描线 -->
     <section class="hero" ref="heroSection">
       <div class="hero-bg-glow"></div>
@@ -13,7 +12,9 @@
           <span class="title-line">打造下一代</span>
           <span class="title-line gradient-text">化学竞赛研习平台</span>
         </h1>
-        <p class="hero-desc" ref="descRef">联考测评 | 社刊研读 | 学术社区 — 为化学爱好者与师生提供纯净、高效的学术环境。</p>
+        <p class="hero-desc" ref="descRef">
+          联考测评 | 社刊研读 | 学术社区 — 为化学爱好者与师生提供纯净、高效的学术环境。
+        </p>
         <div class="hero-buttons" ref="btnsRef">
           <a href="/exam" class="btn-primary">
             <span>开始联考</span>
@@ -35,17 +36,19 @@
     <section class="stats-section">
       <div class="container stats-grid">
         <div class="stat-card" v-for="(stat, idx) in stats" :key="idx">
-          <div class="stat-number" :ref="el => statRefs[idx] = el" :data-target="stat.target">0</div>
+          <div class="stat-number" :ref="(el) => (statRefs[idx] = el)" :data-target="stat.target">
+            0
+          </div>
           <div class="stat-label">{{ stat.label }}</div>
         </div>
       </div>
     </section>
     <!-- 轮播图区域 -->
-<section class="carousel-section">
-  <div class="container">
-    <Carousel :slides="carouselSlides" :autoPlayInterval="5000" />
-  </div>
-</section>
+    <section class="carousel-section">
+      <div class="container">
+        <Carousel :slides="carouselSlides" :autoPlayInterval="5000" />
+      </div>
+    </section>
     <!-- 产品矩阵：展示平台的核心产品/模块，体现门户式品牌连接感 -->
     <section class="products-section">
       <div class="container">
@@ -93,93 +96,133 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { CountUp } from 'countup.js'
-import Carousel from '@/components/Carousel.vue'
+import { ref, onMounted, onUnmounted } from "vue";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CountUp } from "countup.js";
+import Carousel from "@/components/Carousel.vue";
 
 const carouselSlides = [
   {
-    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format',
-    title: 'GSKChem联考',
-    description: '高质量模拟试题，贴近国初实况，智能批阅系统即将上线。'
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format",
+    title: "GSKChem联考",
+    description: "高质量模拟试题，贴近国初实况，智能批阅系统即将上线。",
   },
   {
-    image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2070&auto=format',
-    title: '燕石博物志',
-    description: '社刊在线阅读，收录化学随笔、竞赛真题与幻想乡风物志。'
+    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2070&auto=format",
+    title: "燕石博物志",
+    description: "社刊在线阅读，收录化学随笔、竞赛真题与幻想乡风物志。",
   },
   {
-    image: 'https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?q=80&w=2070&auto=format',
-    title: '铃奈庵命题组',
-    description: '加入我们，共同打造有深度、有温度的化学试题库。'
-  }
-]
+    image: "https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?q=80&w=2070&auto=format",
+    title: "铃奈庵命题组",
+    description: "加入我们，共同打造有深度、有温度的化学试题库。",
+  },
+];
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 // 统计数据
 const stats = [
-  { label: '社区成员', target: 5280 },
-  { label: '联考参与次数', target: 15620 },
-  { label: '试题/社刊', target: 428 },
-  { label: '命题组贡献者', target: 36 }
-]
-const statRefs = ref([])
+  { label: "社区成员", target: 5280 },
+  { label: "联考参与次数", target: 15620 },
+  { label: "试题/社刊", target: 428 },
+  { label: "命题组贡献者", target: 36 },
+];
+const statRefs = ref([]);
 
 // 产品矩阵数据
 const products = [
-  { title: 'GSKChem联考', desc: '高质量模拟联考，贴近国初实况，支持答题卡收集与智能批阅。', icon: 'fas fa-file-signature', link: '/exam' },
-  { title: '燕石博物志', desc: '社刊PDF在线阅览，收录化学随笔、竞赛真题与幻想乡风物志。', icon: 'fas fa-dragon', link: '/bowuzhi' },
-  { title: '铃奈庵命题组', desc: '加入命题团队，共同打造有深度、有温度的化学试题库。', icon: 'fas fa-users', link: '/register' },
-  { title: '学术社区', desc: '邮箱+QQ注册系统，纯净学术交流空间，等你来探索。', icon: 'fas fa-comments', link: '/login' }
-]
+  {
+    title: "GSKChem联考",
+    desc: "高质量模拟联考，贴近国初实况，支持答题卡收集与智能批阅。",
+    icon: "fas fa-file-signature",
+    link: "/exam",
+  },
+  {
+    title: "燕石博物志",
+    desc: "社刊PDF在线阅览，收录化学随笔、竞赛真题与幻想乡风物志。",
+    icon: "fas fa-dragon",
+    link: "/bowuzhi",
+  },
+  {
+    title: "铃奈庵命题组",
+    desc: "加入命题团队，共同打造有深度、有温度的化学试题库。",
+    icon: "fas fa-users",
+    link: "/register",
+  },
+  {
+    title: "学术社区",
+    desc: "邮箱+QQ注册系统，纯净学术交流空间，等你来探索。",
+    icon: "fas fa-comments",
+    link: "/login",
+  },
+];
 
 // DOM 元素引用
-const portalRef = ref(null)
-const heroSection = ref(null)
-const badgeRef = ref(null)
-const titleRef = ref(null)
-const descRef = ref(null)
-const btnsRef = ref(null)
-const scrollRef = ref(null)
+const portalRef = ref(null);
+const heroSection = ref(null);
+const badgeRef = ref(null);
+const titleRef = ref(null);
+const descRef = ref(null);
+const btnsRef = ref(null);
+const scrollRef = ref(null);
 
 onMounted(() => {
   // 初始化 GSAP 滚动动画
   const ctx = gsap.context(() => {
     // Hero 入场动画
-    gsap.fromTo(badgeRef.value, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" })
-    gsap.fromTo(titleRef.value.children, { opacity: 0, y: 30, stagger: 0.2 }, { opacity: 1, y: 0, duration: 0.8, ease: "back.out(1.2)", stagger: 0.2 })
-    gsap.fromTo(descRef.value, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, delay: 0.4, ease: "power2.out" })
-    gsap.fromTo(btnsRef.value.children, { opacity: 0, x: -20, stagger: 0.1 }, { opacity: 1, x: 0, duration: 0.6, delay: 0.6, stagger: 0.15 })
-    gsap.fromTo(scrollRef.value, { opacity: 0 }, { opacity: 0.7, duration: 1, delay: 1, repeat: -1, yoyo: true, ease: "power1.inOut" })
+    gsap.fromTo(
+      badgeRef.value,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
+    );
+    gsap.fromTo(
+      titleRef.value.children,
+      { opacity: 0, y: 30, stagger: 0.2 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "back.out(1.2)", stagger: 0.2 },
+    );
+    gsap.fromTo(
+      descRef.value,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.8, delay: 0.4, ease: "power2.out" },
+    );
+    gsap.fromTo(
+      btnsRef.value.children,
+      { opacity: 0, x: -20, stagger: 0.1 },
+      { opacity: 1, x: 0, duration: 0.6, delay: 0.6, stagger: 0.15 },
+    );
+    gsap.fromTo(
+      scrollRef.value,
+      { opacity: 0 },
+      { opacity: 0.7, duration: 1, delay: 1, repeat: -1, yoyo: true, ease: "power1.inOut" },
+    );
 
     // 统计数据滚动计数器
     statRefs.value.forEach((el, idx) => {
-      if (!el) return
+      if (!el) return;
       ScrollTrigger.create({
         trigger: el,
         start: "top 85%",
         once: true,
         onEnter: () => {
-          const target = parseFloat(el.dataset.target)
-          new CountUp(el, target, { duration: 2.5, startVal: 0, decimalPlaces: 0 }).start()
-        }
-      })
-    })
-  }, portalRef)
+          const target = parseFloat(el.dataset.target);
+          new CountUp(el, target, { duration: 2.5, startVal: 0, decimalPlaces: 0 }).start();
+        },
+      });
+    });
+  }, portalRef);
 
   // 初始化计数器元素的数据属性
   statRefs.value.forEach((el, idx) => {
-    if (el) el.setAttribute('data-target', stats[idx].target)
-  })
+    if (el) el.setAttribute("data-target", stats[idx].target);
+  });
 
   onUnmounted(() => {
-    ctx.revert()
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-  })
-})
+    ctx.revert();
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  });
+});
 </script>
 
 <style scoped>
@@ -217,8 +260,12 @@ onMounted(() => {
 }
 
 @keyframes rotateGlow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .container {
@@ -286,7 +333,8 @@ onMounted(() => {
   flex-wrap: wrap;
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary,
+.btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;

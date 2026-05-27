@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import HeroDisplay from '../components/HeroDisplay.vue';
+import HeroDisplay from "../components/HeroDisplay.vue";
 const notifyReminder = () => {
   alert("📢 联考提醒登记功能开发中，届时会通过邮箱通知。");
 };

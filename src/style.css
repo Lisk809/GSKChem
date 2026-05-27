@@ -26,9 +26,9 @@
 
   --divider: #d4e2ca;
   --hero-bg: #eaf0e4;
-  --bg-hero: #f1f2ef;              /* hero 区域专用 */
+  --bg-hero: #f1f2ef; /* hero 区域专用 */
   --bg-stats: #f1f2ef;
-  
+
   --text-dim: #eee;
   --accent-primary: #eee;
   --accent-glow: #4ade80;
@@ -42,7 +42,7 @@
   --accent-primary: #8bca;
   --accent-glow: #4ade80;
   --shadow-md: 0 8px 20px -8px rgba(0, 0, 0, 0.4);
-  
+
   --bg-body: #121a10;
   --bg-nav: rgba(23, 25, 33, 0.9);
   --bg-card: rgba(23, 25, 33, 0.92);
