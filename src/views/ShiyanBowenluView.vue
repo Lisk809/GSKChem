@@ -40,7 +40,7 @@
 
 <script setup lang="ts">
 // 请将实际的 PDF 文件放在 public 目录下，例如 public/shiyan_bowenlu_vol1.pdf
-const pdfUrl = "/shiyan_bowenlu_vol1.pdf";
+const pdfUrl = "public/shiyan_bowenlu_vol1.pdf";
 </script>
 
 <style scoped>

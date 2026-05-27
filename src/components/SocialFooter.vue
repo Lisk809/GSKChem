@@ -38,7 +38,7 @@ import { Icon } from "@iconify/vue";
   left: 0;
   width: 100%;
   backdrop-filter: blur(20px);
-  background: var(--footer-bg, rgba(255, 255, 255, 0.6));
+  background: var(--bg-card-solid, rgba(255, 255, 255, 0.6));
   border-top: 1px solid var(--footer-border, rgba(0, 0, 0, 0.05));
   padding: 12px 24px;
   z-index: 100;

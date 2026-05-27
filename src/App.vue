@@ -137,7 +137,7 @@ onMounted(() => {
 .navbar {
   position: relative;
   background: var(--bg-nav);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border-light);
   position: sticky;
   top: 0;
@@ -212,7 +212,7 @@ onMounted(() => {
 .logo-text {
   font-weight: 100;
   font-size: 1rem;
-  background: linear-gradient(135deg, #2d5430, #1d3a1a);
+  background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
