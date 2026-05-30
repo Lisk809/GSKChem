@@ -12,7 +12,7 @@
         <span class="link-label">QQ</span>
       </a>
       <a
-        href="https://space.bilibili.com/your-bilibili-id"
+        href="https://space.bilibili.com/3632312667343431"
         target="_blank"
         rel="noopener noreferrer"
         class="social-link"
